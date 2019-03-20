@@ -1,14 +1,19 @@
 # forma-fabric-helpers
 
-Some utils to perform common tasks
+Some utils to perform common tasks.
 
-## Enroll an user
+```bash
+npm install
+```
+
+## A. Enroll an user
 
 ### 1. Create a Service Account/Identity
 
 * [Create a Service Account/Identity](https://docs.worldsibu.com/article/66-create-a-service-account-identity).
 * [Get a Network Profile](https://docs.worldsibu.com/article/66-create-a-service-account-identity#network-profile)
-* Copy the network profile and paste in `./config`
+* Copy the network profile and pasxxte in `./config`
+* Replace properties: `client.credentialStore.path` and `client.credentialStore.cryptoStore.path` with `./config`
 
 ### 2. Configure this project
 
@@ -45,6 +50,16 @@ $ npm run enroll -- <username> <password> <organization-name>
 ### 4. Use the cryptographic material generated
 
 You can now copy and save these values where you need them to connect to the network.
+
+## B. Dummy invoke
+
+Be sure you first complete the user enrollment step (A.).
+
+Call:
+
+```bash
+npm run invoke -- <chaincodename> init
+```
 
 ---
 

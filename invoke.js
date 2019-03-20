@@ -41,11 +41,12 @@ helper.init().then(async () => {
         const { proposalResponse } = await helper.sendTransactionProposal({
             fcn: fcn,
             chaincodeId: chaincode,
-            args: ['marble1'],
-            transientMap: {
-                "marble":
-                    "eyJuYW1lIjoibWFyYmxlMSIsImNvbG9yIjoiYmx1ZSIsInNpemUiOjM1LCJvd25lciI6InRvbSIsInByaWNlIjo5OX0="
-            }
+            args: [],
+            // args: ['marble1'],
+            // transientMap: {
+            //     "marble":
+            //         "eyJuYW1lIjoibWFyYmxlMSIsImNvbG9yIjoiYmx1ZSIsInNpemUiOjM1LCJvd25lciI6InRvbSIsInByaWNlIjo5OX0="
+            // }
         }, true);
 
         res = await helper.processProposal(proposalResponse);
