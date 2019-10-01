@@ -11,6 +11,7 @@ const user = process.env.USERNAME;
 const chaincode = process.argv[2];
 const fcn = process.argv[3];
 const transientData = process.argv[4];
+const args = process.argv.slice(5);
 const keyStore = path.resolve(__dirname, process.env.KEYSTORE);
 const networkProfile = path.resolve(__dirname, process.env.NETWORKPROFILE);
 const channel = process.env.CHANNEL;
@@ -41,7 +42,7 @@ helper.init().then(async () => {
         const { proposalResponse } = await helper.sendTransactionProposal({
             fcn: fcn,
             chaincodeId: chaincode,
-            args: [],
+            args: args || [],
             // args: ['marble1'],
             // transientMap: {
             //     "marble":
